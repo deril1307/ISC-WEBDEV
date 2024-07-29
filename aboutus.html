@@ -7,6 +7,68 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   </head>
   <body>
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Cover the full viewport height */
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999; /* Ensure it's on top of all content */
+      }
+
+      .loading-spinner div {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .loading-spinner .border-sky {
+        border-top-color: #38bdf8; /* Sky Blue */
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .loading-spinner .border-indigo {
+        border-top-color: #4f46e5; /* Indigo */
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .loading-spinner .border-pink {
+        border-top-color: #ec4899; /* Pink */
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .loading-spinner .border-green {
+        border-top-color: #10b981; /* Green */
+        width: 5rem;
+        height: 5rem;
+      }
+    </style>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="spinner">
+      <div class="border-sky"></div>
+      <div class="border-indigo"></div>
+      <div class="border-pink"></div>
+      <div class="border-green"></div>
+    </div>
+
     <!-- nav bar section -->
     <nav class="flex flex-wrap items-center justify-between p-3 bg-white">
       <div class="flex items-center text-xl">
@@ -44,6 +106,7 @@
         </a>
       </div>
     </nav>
+
     <!-- About Us section -->
     <section id="aboutus" class="bg-transparent py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,5 +159,13 @@
         </div>
       </div>
     </section>
+    <
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("spinner").style.display = "none";
+        }, 500); // 2 seconds delay
+      });
+    </script>
   </body>
 </html>
