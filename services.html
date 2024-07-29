@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-black">
+    <!-- nav bar section -->
+    <nav class="flex flex-wrap items-center justify-between p-3 bg-white">
+        <div class="flex items-center text-xl">
+          <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
+          Energi
+        </div>
+        <div class="flex md:hidden">
+          <button id="hamburger">
+            <img class="toggle block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
+            <img class="toggle hidden" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+          </button>
+        </div>
+        <div id="nav-links" class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 md:border-none ">
+          <a href="index.html#home" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Home</a>
+          <a href="index.html#services" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Services</a>
+          <a href="index.html#aboutus" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">About Us</a>
+          <a href="index.html#gallery" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Gallery</a>
+          <a href="index.html#visitus" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Visit Us</a>
+        </div>
+      
+        <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
+          <a href="tel:+123">
+            <div class="flex justify-end">
+              <div class="flex items-center h-10 w-30 rounded-md bg-[#c8a876] text-black font-medium p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  />
+                </svg>
+                Call now
+              </div>
+            </div>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Join Our Community Now Section -->
+    <section class="bg-white py-16">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative isolate overflow-hidden px-6 py-24 text-center sm:rounded-3xl sm:px-16">
+        <h2 class="font-nudge-extrabold mx-auto max-w-2xl text-3xl font-bold uppercase tracking-wide sm:text-4xl">
+          Join Our Community Now
+        </h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+          Experience the benefits of our community. No obligations, just join and explore.
+        </p>
+        <div class="isolate mt-8 flex items-center justify-center -space-x-2 overflow-hidden">
+          <img class="relative z-30 inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/men/34.jpg" alt="Member 1" />
+          <img class="relative z-20 inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Member 2" />
+          <img class="relative z-10 inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Member 3" />
+          <img class="relative z-0 inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Member 4" />
+          <span class="!ml-2 font-bold italic text-teal-500">Join These Awesome Members</span>
+        </div>
+        <div class="mt-12 flex items-center justify-center gap-x-6">
+          <button
+            type="button"
+            class="relative inline-flex items-center gap-x-2 rounded-lg bg-teal-600 px-6 py-4 font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 text-md"
+          >
+            <span class="absolute -top-5 left-0 w-full text-left text-xs italic text-teal-600">No Obligations</span>
+            Join Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="-mr-0.5 h-5 w-5">
+              <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 010 1.06l-3.75 3.75a.75.75 0 11-1.06-1.06l2.47-2.47H3a.75.75 0 010-1.5h16.19l-2.47-2.47a.75.75 0 010-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[72rem] w-[72rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]" aria-hidden="true">
+          <circle cx="512" cy="512" r="512" fill="url(#827591b1-ce8c-4110-b064-7cb85a0b1217)" fill-opacity="0.7"></circle>
+          <defs>
+            <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
+              <stop stop-color="#15b8a6"></stop>
+              <stop offset="1" stop-color="#15b8a6"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+    <script>
+        document.getElementById("hamburger").onclick = function toggleMenu() {
+          const navToggle = document.getElementsByClassName("toggle");
+          for (let i = 0; i < navToggle.length; i++) {
+            navToggle.item(i).classList.toggle("hidden");
+          }
+        };
+      </script>
+</html>
