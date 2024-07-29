@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About us</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/index.css" />
   </head>
   <body>
     <style>
@@ -70,43 +71,50 @@
     </div>
 
     <!-- nav bar section -->
-    <nav class="flex flex-wrap items-center justify-between p-3 bg-white">
+    <nav class="flex items-center justify-between p-3 bg-gradient-to-tr bg-transparent">
       <div class="flex items-center text-xl">
         <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
         Energi
       </div>
       <div class="flex md:hidden">
         <button id="hamburger">
-          <img class="toggle block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
-          <img class="toggle hidden" src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+          <img class="block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
         </button>
       </div>
-      <div id="nav-links" class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
-        <a href="index.html#home" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Home</a>
-        <a href="index.html#services" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Services</a>
-        <a href="index.html#aboutus" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">About Us</a>
-        <a href="index.html#gallery" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Gallery</a>
-        <a href="index.html#visitus" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Visit Us</a>
-      </div>
-
-      <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
-        <a href="tel:+123">
-          <div class="flex justify-end">
-            <div class="flex items-center h-10 w-30 rounded-md bg-[#c8a876] text-black font-medium p-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-              Call now
-            </div>
-          </div>
-        </a>
+      <div class="hidden md:flex text-right text-bold mt-5 md:mt-0 md:border-none desktop-nav">
+        <a href="index.html#home" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Home</a>
+        <a href="index.html#services" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Services</a>
+        <a href="index.html#aboutus" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">About us</a>
+        <a href="index.html#gallery" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Gallery</a>
+        <a href="index.html#contactUs" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Visit Us</a>
       </div>
     </nav>
 
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+      <div class="flex justify-end p-4">
+        <button id="close-sidebar">
+          <img src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+        </button>
+      </div>
+      <div class="flex flex-col space-y-4 text-right font-bold">
+        <a href="index.html#home" class="block px-3 py-3 hover:text-yellow-500">Home</a>
+        <a href="index.html#services" class="block px-3 py-3 hover:text-yellow-500">Services</a>
+        <a href="aboutus.html" class="block px-3 py-3 hover:text-yellow-500">About us</a>
+        <a href="index.html#gallery" class="block px-3 py-3 hover:text-yellow-500">Gallery</a>
+        <a href="index.html#contactUs" class="block px-3 py-3 hover:text-yellow-500">Visit Us</a>
+        <a href="tel:+123" class="block px-3 py-3 bg-[#c8a876] text-black font-medium rounded-md flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6 mr-2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+            />
+          </svg>
+          Call now
+        </a>
+      </div>
+    </div>
     <!-- About Us section -->
     <section id="aboutus" class="bg-transparent py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,19 +167,6 @@
         </div>
       </div>
     </section>
-    <script>
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.getElementById("spinner").style.display = "none";
-        }, 500); // 2 seconds delay
-      });
-
-      document.getElementById("hamburger").onclick = function toggleMenu() {
-        const navToggle = document.getElementsByClassName("toggle");
-        for (let i = 0; i < navToggle.length; i++) {
-          navToggle.item(i).classList.toggle("hidden");
-        }
-      };
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>

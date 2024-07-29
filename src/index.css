@@ -36,7 +36,25 @@ body {
   font-family: monospace;
 }
 
-/* You can add this if you need custom scaling duration, but Tailwind usually suffices */
-.transition-transform {
-  transition: transform 0.5s;
+/* Tambahkan ini ke file CSS Anda */
+#sidebar {
+  display: none;
+}
+
+#sidebar.open {
+  display: block;
+  transform: translateX(0); /* Saat dibuka, sidebar akan bergeser ke dalam layar */
+}
+
+@media (max-width: 767px) {
+  #sidebar {
+    display: block;
+    transform: translateX(100%); /* Default posisi sidebar di luar layar sebelah kanan */
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex !important;
+  }
 }
