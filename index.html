@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="src/index.css" />
   </head>
   <body class="">
     <!-- nav bar section -->
-    <nav class="flex flex-wrap items-center justify-between p-3 bg-gradient-to-tr bg-white">
+    <nav class="flex flex-wrap items-center justify-between p-3 bg-gradient-to-tr bg-transparent">
       <div class="flex items-center text-xl">
         <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
         Energi
@@ -20,11 +20,11 @@
         </button>
       </div>
       <div class="toggle hidden w-full md:w-auto md:flex text-right text-bold mt-5 md:mt-0 md:border-none">
-        <a href="#home" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Home </a>
-        <a href="#services" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Services </a>
-        <a href="#aboutus" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">About us </a>
-        <a href="#gallery" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Gallery </a>
-        <a href="#contactUs" class="block md:inline-block hover:text-blue-500 px-3 py-3 md:border-none">Visit Us </a>
+        <a href="#home" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Home </a>
+        <a href="#services" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Services </a>
+        <a href="aboutus.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">About us </a>
+        <a href="#gallery" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Gallery </a>
+        <a href="#contactUs" class="block md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Visit Us </a>
       </div>
 
       <div class="toggle w-full text-end hidden md:flex md:w-auto px-2 py-2 md:rounded">
@@ -45,70 +45,22 @@
       </div>
     </nav>
 
-    <!-- hero section -->
-    <div class="relative w-full h-[320px] pt-0" id="home">
-      <div class="relative opacity-100">
-        <img src="img/Home.jpg" alt="Background Image" class="object-center w-full h-full" />
-      </div>
-      <div class="absolute inset-0 flex flex-col justify-center items-center md:items-start p-4 md:p-8">
-        <div class="md:w-1/2 text-center md:text-left">
-          <h3 class="text-black font-medium text-4xl md:text-5xl leading-tight mb-2 animate-typing">Energi Bersama Kami</h3>
-        </div>
-      </div>
+   <!-- hero section -->
+<div class="relative w-full h-[320px] pt-0" id="home">
+  <div class="relative opacity-100">
+    <img src="img/Home.jpg" alt="Background Image" class="object-center w-full h-full" />
+  </div>
+  <div class="absolute inset-0 flex flex-col justify-center items-center md:items-start p-4 md:p-8">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h3 class="text-black font-medium text-4xl md:text-5xl leading-tight mb-2 animate-typing">Energi Bersama Kami</h3>
+      
+      <!-- Link Button -->
+      <a href="aboutus.html" class="inline-block bg-teal-600 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-teal-500 transition duration-300 mt-4">
+        Let's Talk About Us
+      </a>
     </div>
-
-    <!-- About Us section -->
-    <section id="aboutus" class="bg-gray-50 py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Tentang Kami</h2>
-
-        <!-- First set of content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div class="flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Judul 1</h2>
-            <p class="text-gray-600 text-lg">
-              Bappa flour mill provides our customers with the highest quality products and services. We offer a wide variety of flours and spices to choose from, and we are always happy to help our customers find the perfect products for
-              their needs. We are committed to providing our customers with the best possible experience. We offer competitive prices, fast shipping, and excellent customer service. We are also happy to answer any questions that our
-              customers may have about our products or services. If you are looking for a flour and spices service business that can provide you with the highest quality products and services, then we are the company for you. We look
-              forward to serving you!
-            </p>
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image" class="object-cover rounded-lg shadow-md w-3/4 mx-auto transform transition-transform duration-300 hover:scale-105" />
-          </div>
-        </div>
-
-        <!-- Second set of content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div class="flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Judul 2</h2>
-            <p class="text-gray-600 text-lg">
-              At Bappa flour mill, we take pride in our commitment to quality and customer satisfaction. Our extensive range of flours and spices are sourced from the best suppliers to ensure premium quality. We are dedicated to meeting
-              your specific needs and providing you with a personalized service. Whether you need advice on the right product or require fast delivery, our team is here to help. We strive to offer the best products at competitive prices,
-              ensuring that you receive exceptional value and service.
-            </p>
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image" class="object-cover rounded-lg shadow-md w-3/4 mx-auto transform transition-transform duration-300 hover:scale-105" />
-          </div>
-        </div>
-
-        <!-- Third set of content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Judul 3</h2>
-            <p class="text-gray-600 text-lg">
-              Our mission at Bappa flour mill is to offer high-quality products that meet your needs and exceed your expectations. We focus on delivering fresh and reliable flours and spices, with a commitment to excellence in every aspect
-              of our business. Our team is dedicated to providing you with a seamless experience, from selecting the right products to receiving them in a timely manner. We are passionate about what we do and are always here to assist you
-              with any inquiries or requirements you may have.
-            </p>
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image" class="object-cover rounded-lg shadow-md w-3/4 mx-auto transform transition-transform duration-300 hover:scale-105" />
-          </div>
-        </div>
-      </div>
-    </section>
+  </div>
+</div>
 
     <!-- Our Services Section -->
     <section class="py-10" id="services">
@@ -305,7 +257,7 @@
       </div>
     </section>
 
-    <footer id="contact" style="background-color: black" class="py-8">
+    <footer id="contact" style="background-color: yellowgreen" class="py-8">
       <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 class="text-xl font-bold text-white mb-4">Ready to cooperate with us?</h3>
