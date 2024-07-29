@@ -5,8 +5,7 @@ import cors from "cors";
 const app = express();
 const port = 3000;
 const apiKey = "a42c2709196635074c089d59efebd744";
-const cityId = "1642911"; // ID kota Jakarta
-
+const cityId = "1642911";
 app.use(cors());
 
 app.get("/weather", async (req, res) => {

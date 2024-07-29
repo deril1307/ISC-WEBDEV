@@ -10,8 +10,10 @@
  <!-- nav bar section -->
 <nav class="flex items-center justify-between p-3">
   <div class="flex items-center text-xl">
-    <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
-    Energi
+    <a href="index.html#home" class="flex items-center">
+      <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
+      <span>Energi</span>
+    </a>
   </div>
   <div class="flex md:hidden">
     <button id="hamburger">
@@ -25,6 +27,7 @@
     <a href="index.html#gallery" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Gallery</a>
     <a href="index.html#contactUs" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Visit Us</a>
     <a href="weather.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Weather</a>
+    <a href="login.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Login</a>
   </div>
 </nav>
 
@@ -42,6 +45,7 @@
     <a href="index.html#gallery" class="block px-3 py-3 hover:text-yellow-500">Gallery</a>
     <a href="index.html#contactUs" class="block px-3 py-3 hover:text-yellow-500">Visit Us</a>
     <a href="weather.html" class="block px-3 py-3 hover:text-yellow-500">Weather</a>
+    <a href="login.html" class="block px-3 py-3 hover:text-yellow-500">Login</a>
     <a href="tel:+123" class="block px-3 py-3 bg-[#c8a876] text-black font-medium rounded-md flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6 mr-2">
         <path
@@ -172,7 +176,7 @@
 
     <!-- gallery -->
     <section class="text-gray-700 body-font" id="gallery">
-      <div class="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">News</div>
+      <div class="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">Gallery</div>
 
       <div class="grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <div class="group relative p-4 transform transition duration-500 hover:scale-110">
@@ -238,7 +242,7 @@
               <div class="flex-1 px-3">
                   <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8"
                       style="box-shadow:0 10px 28px rgba(0,0,0,.08)">
-                      <p class="text-xl font-semibold">Saya sudah menggunakan Company Energi untuk kebutuhan 
+                      <p class="text-xl font-semibold">Saya sudah menggunakan Company Energi untuk kebutuhan rumah
                       </p>
                       <p class="mt-6">Eu lobortis elementum nibh tellus molestie nunc non blandit massa.
                           Sit amet consectetur adipiscing elit duis.
@@ -264,7 +268,7 @@
                           Sit amet consectetur adipiscing elit duis.
                       </p>
                       <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full"
-                                      src="https://placeimg.com/150/150/people" alt="Jane Smith">
+                                      src="img/dachi.jpg" alt="Jane Smith">
                           <div>
                               <p>dachi
                               </p>
@@ -284,7 +288,7 @@
                         Sit amet consectetur adipiscing elit duis.
                     </p>
                     <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full"
-                                    src="https://placeimg.com/150/150/people" alt="Jane Smith">
+                                    src="img/shidqul.jpg" alt="Jane Smith">
                         <div>
                             <p>Shidqul
                             </p>
@@ -304,7 +308,7 @@
                       Sit amet consectetur adipiscing elit duis.
                   </p>
                   <div class="flex items-center mt-8"><img class="w-12 h-12 mr-4 rounded-full"
-                                  src="https://placeimg.com/150/150/people" alt="Jane Smith">
+                                  src="img/deril.jpg" alt="Jane Smith">
                       <div>
                           <p>Deril
                           </p>
@@ -332,7 +336,7 @@
                 <div class="border-t border-gray-200 px-6 py-4">
                   <h3 class="text-lg font-bold text-gray-900">Contact</h3>
                   <p class="mt-1 font-bold text-gray-600"><a href="tel:+123">Phone: 081235632373</a></p>
-                  <a class="flex m-1" href="tel:+919823331842">
+                  <a class="flex m-1" href="">
                     <div class="flex-shrink-0">
                       <div class="flex items-center justify-between h-10 w-30 rounded-md bg-indigo-500 text-white p-2">
                         <!-- Heroicon name: phone -->
