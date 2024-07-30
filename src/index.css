@@ -76,3 +76,38 @@ nav {
   backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow to create depth */
 }
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.notification.success {
+  background-color: #4caf50; /* Green */
+}
+
+.notification.error {
+  background-color: #f44336; /* Red */
+}
