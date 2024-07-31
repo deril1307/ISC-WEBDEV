@@ -6,10 +6,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/connect.js"
-    }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/connect.js" }]
 }
