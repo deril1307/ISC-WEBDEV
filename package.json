@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node connect.js"
+    "start": "node connect.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
