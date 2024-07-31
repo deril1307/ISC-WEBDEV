@@ -6,7 +6,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 
-// Load environment variables from .env file
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 5000;
 
-// set middleware
+// Set middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
@@ -28,14 +27,11 @@ const db = mysql.createConnection({
 });
 
 db.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MySQL:", err);
-  } else {
-    console.log("Connected to MySQL");
-  }
+  if (err) throw err;
+  console.log("Connected to MySQL");
 });
 
-// register form
+// Register form
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "register.html"));
 });
@@ -69,7 +65,7 @@ app.post("/register", (req, res) => {
   });
 });
 
-// login
+// Login
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
   const sql = "SELECT * FROM user WHERE username = ?";
