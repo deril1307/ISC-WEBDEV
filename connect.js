@@ -4,28 +4,35 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import path from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
-// set  middleware
+// set middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "akun",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to MySQL");
+  if (err) {
+    console.error("Error connecting to MySQL:", err);
+  } else {
+    console.log("Connected to MySQL");
+  }
 });
 
 // register form
@@ -81,7 +88,7 @@ app.post("/login", (req, res) => {
         return res.status(500).send("Server error");
       }
       if (isMatch) {
-        res.redirect("/index.html?success=login");
+        res.redirect("/loginberhasil.html?success=login");
       } else {
         res.redirect("/login.html?error=invalid_credentials");
       }
@@ -96,8 +103,7 @@ app.get("/account", (req, res) => {
 
 // API endpoint to get user info
 app.get("/api/user-info", (req, res) => {
-  // For simplicity, let's assume the user ID is passed in query parameters
-  const userId = req.query.userId; // Example of getting user ID from query parameters
+  const userId = req.query.userId;
 
   if (!userId) {
     return res.status(400).send("User ID is required");
@@ -115,7 +121,7 @@ app.get("/api/user-info", (req, res) => {
     }
 
     const username = results[0].username;
-    res.json({ username }); // Send username as JSON
+    res.json({ username });
   });
 });
 

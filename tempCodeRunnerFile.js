@@ -1,24 +1,122 @@
 import express from "express";
-import fetch from "node-fetch";
-import cors from "cors";
+import mysql from "mysql2";
+import bodyParser from "body-parser";
+import bcrypt from "bcrypt";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
-const apiKey = "a42c2709196635074c089d59efebd744";
-const cityId = "1642911";
-app.use(cors());
+const port = 5000;
 
-app.get("/weather", async (req, res) => {
-  try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${apiKey}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    res.status(500).send("Error fetching weather data");
+// set  middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname)));
+
+// MySQL connection
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Lejaw123",
+  database: "akun",
+});
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log("Connected to MySQL");
+});
+
+// register form
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "register.html"));
+});
+
+// Handle form register
+app.post("/register", (req, res) => {
+  const { username, email, password, confirm_password } = req.body;
+
+  if (password !== confirm_password) {
+    return res.redirect("/register?error=password_mismatch");
   }
+
+  bcrypt.hash(password, 10, (err, hashedPassword) => {
+    if (err) {
+      console.error("Error hashing password:", err);
+      return res.redirect("/register?error=server_error");
+    }
+
+    const sql = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
+    db.query(sql, [username, email, hashedPassword], (err, result) => {
+      if (err) {
+        if (err.code === "ER_DUP_ENTRY") {
+          return res.redirect("/register?error=duplicate_entry");
+        }
+        console.error("Database error:", err);
+        return res.redirect("/register?error=database_error");
+      }
+
+      res.redirect("/index.html?success=registration");
+    });
+  });
+});
+
+// login
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  const sql = "SELECT * FROM user WHERE username = ?";
+  db.query(sql, [username], (err, results) => {
+    if (err) {
+      console.error("Database error:", err);
+      return res.status(500).send("Database error");
+    }
+    if (results.length === 0) {
+      return res.redirect("/login.html?error=invalid_credentials");
+    }
+    const user = results[0];
+    bcrypt.compare(password, user.password, (err, isMatch) => {
+      if (err) {
+        console.error("Error comparing passwords:", err);
+        return res.status(500).send("Server error");
+      }
+      if (isMatch) {
+        res.redirect("/loginberhasil.html?success=login");
+      } else {
+        res.redirect("/login.html?error=invalid_credentials");
+      }
+    });
+  });
+});
+
+// Serve the account page with username
+app.get("/account", (req, res) => {
+  res.sendFile(path.join(__dirname, "account.html"));
+});
+
+// API endpoint to get user info
+app.get("/api/user-info", (req, res) => {
+  // For simplicity, let's assume the user ID is passed in query parameters
+  const userId = req.query.userId; // Example of getting user ID from query parameters
+
+  if (!userId) {
+    return res.status(400).send("User ID is required");
+  }
+
+  const sql = "SELECT username FROM user WHERE id = ?";
+  db.query(sql, [userId], (err, results) => {
+    if (err) {
+      console.error("Database error:", err);
+      return res.status(500).send("Database error");
+    }
+
+    if (results.length === 0) {
+      return res.status(404).send("User not found");
+    }
+
+    const username = results[0].username;
+    res.json({ username });
+  });
 });
 
 app.listen(port, () => {
