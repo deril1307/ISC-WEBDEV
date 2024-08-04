@@ -1,1 +1,4 @@
-.env
+public/src/login.js
+public/src/account.js
+public/src/register.js
+public/src/forgotpassword.js
