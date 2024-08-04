@@ -1,4 +1,4 @@
-public/src/login.js
-public/src/account.js
-public/src/register.js
-public/src/forgotpassword.js
+public/user/login.js
+public/user/account.js
+public/user/register.js
+public/user/forgotpassword.js
