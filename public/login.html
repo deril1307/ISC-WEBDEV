@@ -6,7 +6,8 @@
     <title>Login</title>
     <link rel="stylesheet" href="src/index.css" />
     <link rel="icon" href="img/logo.png" type="image/png" />
-    <script type="module" src="user/login.js" defer></script>
+    <script type="module" src="user/login.js"></script>
+    <script type="module" src="user/google.js"></script>
   </head>
   <body>
     <!-- nav bar section -->
@@ -80,30 +81,14 @@
             <input class="w-full bg-yellow-700 hover:bg-green-700 text-black font-bold py-2 px-4 mb-6 rounded" type="submit" value="Login" />
           </div>
         </form>
+        <button id="login-with-google" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-6">Login with Google</button>
         <footer>
           <a class="text-black hover:text-red-700 text-sm float-left" href="forgotpassword.html">Lupa Password?</a>
           <a class="text-black-700 hover:text-red-700 text-sm float-right" href="register.html">Register</a>
         </footer>
       </div>
     </div>
-
     <script src="src/index.js" defer></script>
-    <script>
-      function getQueryParam(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-      }
-      window.onload = () => {
-        const error = getQueryParam("error");
-        if (error === "invalid_credentials") {
-          const message = document.createElement("div");
-          message.innerText = "Invalid email or password.";
-          message.className = "text-red-500 mb-4";
-          document.querySelector("form").insertBefore(message, document.querySelector("form").firstChild);
-        }
-      };
-    </script>
-
     <script type="text/javascript">
       document.addEventListener("contextmenu", function (event) {
         event.preventDefault();

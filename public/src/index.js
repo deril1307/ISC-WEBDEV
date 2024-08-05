@@ -103,3 +103,17 @@ if (toTopButton) {
     });
   };
 }
+
+function getQueryParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+window.onload = () => {
+  const error = getQueryParam("error");
+  if (error === "invalid_credentials") {
+    const message = document.createElement("div");
+    message.innerText = "Invalid email or password.";
+    message.className = "text-red-500 mb-4";
+    document.querySelector("form").insertBefore(message, document.querySelector("form").firstChild);
+  }
+};

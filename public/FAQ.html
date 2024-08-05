@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="stylesheet" href="src/index.css" />
+  </head>
+  <body>
+    <!-- nav bar section -->
+    <nav class="flex items-center justify-between p-3 bg-gray-800 text-white">
+      <div class="flex items-center text-xl">
+        <a href="index.html" class="flex items-center">
+          <img src="img/logo.png" alt="Logo" class="h-10 mr-2" />
+          <span>Energi</span>
+        </a>
+      </div>
+      <div class="flex md:hidden">
+        <button id="hamburger">
+          <img class="block" src="img/icons8-menu-30.png" width="30" height="30" />
+        </button>
+      </div>
+      <div class="hidden md:flex text-right text-bold mt-5 md:mt-0">
+        <a href="index.html#home" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Home</a>
+        <a href="index.html#services" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Services</a>
+        <a href="aboutus.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3">About us</a>
+        <a href="index.html#gallery" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Gallery</a>
+        <a href="index.html#contactUs" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Visit Us</a>
+        <a href="login.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Login</a>
+        <a href="account.html" class="block md:inline-block hover:text-yellow-500 px-3 py-3">Account</a>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+      <div class="flex justify-end p-4">
+        <button id="close-sidebar">
+          <img src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png" width="40" height="40" />
+        </button>
+      </div>
+      <div class="flex flex-col space-y-4 text-right font-bold">
+        <a href="index.html#home" class="block px-3 py-3 hover:text-yellow-500">Home</a>
+        <a href="index.html#services" class="block px-3 py-3 hover:text-yellow-500">Services</a>
+        <a href="aboutus.html" class="block px-3 py-3 hover:text-yellow-500">About us</a>
+        <a href="index.html#gallery" class="block px-3 py-3 hover:text-yellow-500">Gallery</a>
+        <a href="index.html#contactUs" class="block px-3 py-3 hover:text-yellow-500">Visit Us</a>
+        <a href="login.html" class="block px-3 py-3 hover:text-yellow-500">Login</a>
+        <a href="account.html" class="block px-3 py-3 hover:text-yellow-500">Account</a>
+        <a href="tel:+123" class="block px-3 py-3 bg-[#c8a876] text-black font-medium rounded-md flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6 mr-2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+            />
+          </svg>
+          Call now
+        </a>
+      </div>
+    </div>
+    <div class="bg-[#F2F4FF] h-screen">
+      <section class="max-w-5xl mx-auto py-10 sm:py-20">
+        <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Frequently asked questions</h2>
+          <p class="text-lg font-medium text-slate-700/70">energibersama.my.id</p>
+        </div>
+        <div class="w-full px-7 md:px-10 xl:px-2 py-4">
+          <div class="mx-auto w-full max-w-5xl border border-slate-400/20 rounded-lg bg-white">
+            <div class="border-b border-[#0A071B]/10">
+              <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-1">
+                <span>Apa itu Website Energibersama.my.id??</span
+                ><svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="mt-1.5 md:mt-0 flex-shrink-0 rotate-180 transform h-5 w-5 text-[#5B5675]"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                </svg>
+              </button>
+              <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-1" style="display: none">
+                Energibersama.my.id adalah platform yang menyediakan informasi dan layanan terkait energi terbarukan, khususnya energi angin,Surya dan Air di Indonesia.
+              </div>
+            </div>
+            <div class="border-b border-[#0A071B]/10">
+              <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-2">
+                <span>Bagaimana cara menghubungi kami??</span
+                ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                </svg>
+              </button>
+              <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-2" style="display: none">Anda bisa menghubungi kami melalui WhatsApp di nomor.</div>
+            </div>
+            <div class="border-b border-[#0A071B]/10">
+              <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-3">
+                <span>Layanan apa saja yang tersedia di Energibersama.my.id??</span
+                ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                </svg>
+              </button>
+              <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-3" style="display: none">Kami menyediakan berbagai layanan seperti konsultasi energi terbarukan, pelatihan, dan sertifikasi.</div>
+            </div>
+            <div class="">
+              <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-4">
+                <span>Bagaimana cara berpartisipasi dalam program kami?</span
+                ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                </svg>
+              </button>
+              <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-4" style="display: none">
+                Anda dapat berpartisipasi dalam program kami dengan mendaftar di situs web kami atau menghubungi kami melalui WhatsApp atau email. Kami akan memberikan informasi lebih lanjut tentang langkah-langkah yang harus diikuti.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".question-btn");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-toggle");
+            const target = document.getElementById(targetId);
+            const isExpanded = target.style.display === "block";
+
+            if (isExpanded) {
+              target.style.display = "none";
+              this.querySelector("svg").classList.remove("rotate-180");
+            } else {
+              target.style.display = "block";
+              this.querySelector("svg").classList.add("rotate-180");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

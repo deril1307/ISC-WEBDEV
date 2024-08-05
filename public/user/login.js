@@ -5,12 +5,12 @@ const firebaseConfig = {
   apiKey: "AIzaSyAH32Cno0VC7uT8NOpP0639lel53JSjX5c",
   authDomain: "isc-webdev-brt-team.firebaseapp.com",
   projectId: "isc-webdev-brt-team",
-  storageBucket: "isc-webdev-brt-teamappspot.com",
+  storageBucket: "isc-webdev-brt-team.appspot.com",
   messagingSenderId: "YOUR_SENDER_ID",
   appId: "YOUR_APP_ID",
 };
 
-// Initialize Firebase
+// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -23,16 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = form.querySelector('input[name="password"]').value;
 
     try {
-      // Assuming username is the email, replace username with email if needed
+      // Anggap username adalah email, ganti username dengan email jika diperlukan
       await signInWithEmailAndPassword(auth, username, password);
 
-      // Store the username in local storage
+      // Simpan username di local storage
       localStorage.setItem("loggedInUser", username);
 
-      window.location.href = "account.html"; // Redirect to successful login page
+      window.location.href = "account.html"; // Redirect ke halaman sukses login
     } catch (error) {
       console.error("Error logging in:", error);
-      window.location.href = `login.html?error=invalid_credentials`; // Redirect with error query parameter
+      window.location.href = `login.html?error=invalid_credentials`; // Redirect dengan parameter error
     }
   });
 });
