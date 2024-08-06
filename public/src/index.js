@@ -23,14 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Close sidebar when clicking outside of it
   document.addEventListener("click", function (event) {
     if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
       sidebar.classList.remove("open");
     }
   });
 
-  // Show/hide navbar based on window size
   const toggleNavbar = () => {
     if (window.innerWidth >= 768) {
       sidebar.classList.remove("open");
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return urlParams.get(name);
   };
 
-  // Example usage of getQueryParam
   const someParam = getQueryParam("example");
   if (someParam) {
     showNotification(`Query parameter 'example' is ${someParam}`);
@@ -81,12 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Get the 'to top' button element by ID
 var toTopButton = document.getElementById("to-top-button");
 
-// Check if the button exists
 if (toTopButton) {
-  // On scroll event, toggle button visibility based on scroll position
   window.onscroll = function () {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
       toTopButton.classList.remove("hidden");
@@ -95,7 +89,6 @@ if (toTopButton) {
     }
   };
 
-  // Function to scroll to the top of the page smoothly
   window.goToTop = function () {
     window.scrollTo({
       top: 0,
@@ -108,6 +101,7 @@ function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(name);
 }
+
 window.onload = () => {
   const error = getQueryParam("error");
   if (error === "invalid_credentials") {
