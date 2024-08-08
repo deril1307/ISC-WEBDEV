@@ -1,3 +1,4 @@
+// untuk mmebuat side bar
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger");
   const closeSidebar = document.getElementById("close-sidebar");

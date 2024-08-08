@@ -10,12 +10,20 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID",
 };
 
-// Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
+  const loginMessage = document.getElementById("login-message");
+
+  // Check if the user is already logged in
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      loginMessage.textContent = "You are already logged in.";
+    }
+  });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -23,16 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = form.querySelector('input[name="password"]').value;
 
     try {
-      // Anggap username adalah email, ganti username dengan email jika diperlukan
       await signInWithEmailAndPassword(auth, username, password);
-
-      // Simpan username di local storage
       localStorage.setItem("loggedInUser", username);
-
-      window.location.href = "account.html"; // Redirect ke halaman sukses login
+      window.location.href = "account.html"; // Redirect to account page
     } catch (error) {
       console.error("Error logging in:", error);
-      window.location.href = `login.html?error=invalid_credentials`; // Redirect dengan parameter error
+      loginMessage.textContent = "Invalid credentials. Please try again.";
     }
   });
 });
