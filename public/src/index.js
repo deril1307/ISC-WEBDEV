@@ -1,4 +1,4 @@
-// untuk mmebuat side bar
+// untuk membuat side bar
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger");
   const closeSidebar = document.getElementById("close-sidebar");
@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// tombol top to button
 var toTopButton = document.getElementById("to-top-button");
 
 if (toTopButton) {
@@ -98,11 +99,12 @@ if (toTopButton) {
   };
 }
 
+// mengelola input login user
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(name);
 }
-
+// jika terdapat salah email dan password pada user
 window.onload = () => {
   const error = getQueryParam("error");
   if (error === "invalid_credentials") {

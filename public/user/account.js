@@ -1,6 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"; // firebase app
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"; // auth
 
+// firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAH32Cno0VC7uT8NOpP0639lel53JSjX5c",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -10,10 +11,11 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID",
 };
 
-// Initialize Firebase
+// inisialiasi Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// menerima inputan email dari login.js
 document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -30,10 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("logout").addEventListener("click", () => {
     signOut(auth)
+      // berhasil sign out
       .then(() => {
         localStorage.removeItem("user");
         window.location.href = "login.html";
       })
+      // jika error sign out
       .catch((error) => {
         console.error("Error signing out:", error);
         alert("Error signing out: " + error.message);

@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
+// firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAH32Cno0VC7uT8NOpP0639lel53JSjX5c",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -10,7 +11,7 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID",
 };
 
-// Initialize Firebase
+//  inisialisasi firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         alert("Password reset email sent! Please check your inbox.");
-        window.location.href = "login.html"; // Redirect to login page
+        window.location.href = "login.html";
       })
       .catch((error) => {
         alert(`Error: ${error.message}`);
